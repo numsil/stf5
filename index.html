@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko" style="height: 100%; margin: 0; padding: 0;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --main-bg-color: #000000;
+            --text-color: #ffffff;
+            --highlight-color: #FEBA05;
+            --secondary-color: #FD0C2C;
+            --section-bg-color: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--main-bg-color);
+            margin: 0;
+            padding: 10px;
+            min-height: 100%;
+            box-sizing: border-box;
+        }
+        h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            align-items: center;
+            letter-spacing: 1px;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, var(--highlight-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            text-fill-color: transparent;
+            font-weight: 800;
+            margin-left: 5px;
+        }
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+        h3 {
+            margin-bottom: 10px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 1.5em;
+        }
+        .highlight {
+            background-color: var(--section-bg-color);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid var(--highlight-color);
+        }
+        .warning {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        .icon {
+            margin-right: 15px;
+            color: var(--highlight-color);
+            font-size: 1.3em;
+            width: 30px;
+            text-align: center;
+        }
+        .reward-section {
+            background-color: var(--section-bg-color);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid var(--highlight-color);
+            box-shadow: 0 0 15px rgba(254, 186, 5, 0.3);
+        }
+        .reward-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .reward-icon {
+            font-size: 1.2em;
+            margin-right: 15px;
+            color: var(--highlight-color);
+            width: 25px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .reward-text {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .bounty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .bounty-card {
+            background-color: var(--section-bg-color);
+            border: 1px solid var(--highlight-color);
+            border-radius: 5px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bounty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(254, 186, 5, 0.4);
+        }
+        .bounty-title {
+            font-weight: bold;
+            color: var(--highlight-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            font-family: 'Rajdhani', sans-serif;
+        }
+        .bounty-icon {
+            font-size: 1.2em;
+            margin-right: 10px;
+            width: 25px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            h3 {
+                font-size: 1.3em;
+            }
+            .reward-section {
+                padding: 15px;
+            }
+            .reward-item {
+                font-size: 0.9em;
+            }
+            .reward-icon {
+                margin-right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            .icon {
+                font-size: 1.1em;
+                width: 25px;
+            }
+            .reward-item {
+                font-size: 0.8em;
+            }
+            .reward-icon {
+                margin-right: 5px;
+            }
+            .warning {
+                flex-direction: column;
+                text-align: center;
+            }
+            .warning .icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .bounty-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reward-section">
+        <h3><i class="fas fa-video icon"></i><span class="gradient-text">스트리머 보상</span></h3>
+        <div class="reward-item">
+            <i class="fas fa-star reward-icon"></i>
+            <div class="reward-text">우승 팀) 총 700만원</div>
+        </div>
+        <div class="reward-item">
+            <i class="fas fa-certificate reward-icon"></i>
+            <div class="reward-text">준우승 팀) 총 300만원</div>
+        </div>
+    </div>
+
+    <h2>
+        <i class="fas fa-medal icon"></i>
+        <span class="gradient-text">현상금</span>
+    </h2>
+    
+    <div class="warning">
+        <i class="fas fa-exclamation-triangle icon"></i>
+        <div>
+            <strong>현상금은 전부 1P</strong><br>
+            *현상금의 상품과 포인트는 디스코드 최초 인증자에게만 지급됩니다 (수작업으로 진행하기 때문에 실시간 반영이 약간 늦어질 수 있습니다)
+        </div>
+    </div>
+</body>
+</html>
